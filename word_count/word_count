@@ -1,0 +1,7 @@
+#!/usr/bin/env ruby
+require_relative './file_parser'
+require_relative './word_count'
+
+file_parser   = WordCount::FileParser.new(file_name: ARGV[0] || 'article.txt')
+input_string  = file_parser.input_string
+p WordCount::App.new(input_string: input_string).run
