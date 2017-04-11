@@ -1,5 +1,3 @@
-require_relative './analyser'
-
 module WordCount
   class App
     def initialize(input_string: nil)
