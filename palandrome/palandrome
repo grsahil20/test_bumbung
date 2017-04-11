@@ -1,0 +1,14 @@
+#!/usr/bin/env ruby
+require_relative './file_parser'
+require_relative './palandrome'
+
+file_parser   = Palandrome::FileParser.new(file_name: ARGV[0] || 'hello.txt')
+input_strings = file_parser.input_strings
+palandrome    = Palandrome::App.new(input_strings: input_strings)
+results =  palandrome.run
+results.each do |key, value|
+    p "#{key.to_s.capitalize} ==================================="
+    value.each_with_index do |string|
+        p string
+    end
+end
